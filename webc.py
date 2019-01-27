@@ -5,7 +5,11 @@ video = cv2.VideoCapture(0)
 
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
+a = 1
+
 while True:
+    a = a+1
+
     check, frame = video.read()
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -31,27 +35,8 @@ while True:
     if key == ord('q'):
         break
 
+print(a, " frames")
 #show video window
 video.release()
 cv2.destroyAllWindows()
 
-'''
-import numpy as np
-import cv2
-
-cap = cv2.VideoCapture(0)
-
-while(True):
-    # Capture frame-by-frame
-    ret, frame = cap.read()
-
-    # Our operations on the frame come here
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-    # Display the resulting frame
-    cv2.imshow('frame',gray)
-
-
-# When everything done, release the capture
-cap.release()
-cv2.destroyAllWindows()'''
